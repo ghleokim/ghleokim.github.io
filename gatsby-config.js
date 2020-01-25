@@ -95,6 +95,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-glamor`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-156914147-1",
+      },
+    },
     // this (optional) plugin enables Progressive Web AppOffline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
