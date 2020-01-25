@@ -5,3 +5,6 @@
  */
 
 // You can delete this file if you're not using it
+exports.onClientEntry = function() {
+  require(`es6-object-assign`).polyfill()
+}

@@ -1,20 +1,96 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
+import Layout from "../layouts"
+import styles from "../styles"
+import presets from "../utils/presets"
+import { rhythm, scale } from "../utils/typography"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Intro</h1>
-    <p>새롭게 배우는 것들, 생각을 정리하는 블로그입니다.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+class Index extends React.Component {
+  render() {
+    const posts = this.props.data.allMarkdownRemark.edges
 
-export default IndexPage
+    return (
+      <Layout location={this.props.location}>
+        <SEO title="Home" />
+        <div>
+          <h1
+            css={{
+              ...scale(4 / 5),
+              fontWeight: `800`,
+              marginBottom: rhythm(2),
+            }}
+          >
+            this is a blog of 
+            {` `}
+            <a href="https://github.com/ghleokim">
+              @ghleokim
+            </a>
+            {``}
+            . a junior developer, bassist in band
+            {` `}
+            <a href="https://gerdaofficial.bandcamp.com">
+              gerda
+            </a>
+            {` `}
+            .
+            {}
+          </h1>
+          <ul
+            css={{
+              marginBottom: rhythm(2),
+              marginTop: rhythm(2),
+              marginLeft: 0,
+              listStyle: `none`,
+            }}
+          >
+            {posts.map(post => (
+              <li key={post.node.fields.slug}>
+                <span
+                  css={{
+                    color: styles.colors.light,
+                    display: `block`,
+                    [presets.Tablet]: {
+                      float: `right`,
+                      marginLeft: `1rem`,
+                    },
+                  }}
+                >
+                  {post.node.frontmatter.date}
+                </span>
+                <Link to={post.node.fields.slug} className="link-underline">
+                  {post.node.frontmatter.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Layout>
+    )
+  }
+}
+
+export default Index
+
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark(
+      limit: 2000
+      sort: { fields: [frontmatter___date], order: ASC }
+      filter: { frontmatter: { draft: { ne: true }, example: { ne: true } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+          }
+        }
+      }
+    }
+  }
+`
