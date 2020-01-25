@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{w2l6:function(e,t,n){"use strict";n.r(t),function(e){n("q1tI");var a=n("aArQ"),l=n("vrFN");t.default=function(){return e.createElement(a.a,null,e.createElement(l.a,{title:"404: Not found"}),e.createElement("h1",null,"잘못된 경로입니다 ! 돌아가주세요 ",e.createElement("span",{role:"img","aria-label":"sad emoji"},"😕")),e.createElement("a",{href:"/"},"메인으로 돌아가기"))}}.call(this,n("iMUK"))}}]);
+//# sourceMappingURL=component---src-pages-404-js-ca46c9a5844f3460ab83.js.map

@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-pages-index-js","path":"/","result":{"pageContext":{"isCreatedByStatefulCreatePages":true}}}
+{"componentChunkName":"component---src-pages-index-js","path":"/","result":{"data":{"allMarkdownRemark":{"edges":[{"node":{"fields":{"slug":"/Hello-World-블로그-개시/"},"frontmatter":{"title":"Hello World: 블로그 개시","date":"January 25, 2020"}}}]}},"pageContext":{}}}

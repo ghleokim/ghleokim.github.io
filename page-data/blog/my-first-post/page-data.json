@@ -1,1 +1,0 @@
-{"componentChunkName":"component---src-templates-blog-template-js","path":"/blog/my-first-post","result":{"data":{"markdownRemark":{"html":"<h1>this is new blog post</h1>\n<h2>h2 post</h2>\n<h3>h3 post</h3>","frontmatter":{"date":"January 25, 2020","path":"/blog/my-first-post","title":"My first blog post"}}},"pageContext":{"isCreatedByStatefulCreatePages":false}}}
