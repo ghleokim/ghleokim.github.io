@@ -114,6 +114,13 @@ const options = {
         backgroundColor: `#f8fafd`,
         borderRadius: `2px`,
       },
+      "body h1 > code[class*='language-'], body h2 > code[class*='language-'], body h3 > code[class*='language-']": {
+        fontSize: `85% !important`,
+      },
+      // Inline code highlighting.
+      "body :not(pre) > code[class*='language-']": {
+        backgroundColor: `#f8fafd`
+      },
       // Add space before and after code/tt elements.
       // @see https://github.com/KyleAMathews/typography.js/blob/66f78f0f4b8d2c5abf0262bcc1118610139c3b5f/packages/typography-plugin-code/src/index.js#L38-L46
       "code:before,code:after,tt:before,tt:after": {
@@ -154,12 +161,6 @@ const options = {
         paddingRight: rhythm(3 / 4),
         paddingLeft: rhythm(2 / 4),
         borderLeft: `${rhythm(1 / 4)} solid #5082cd`,
-      },
-      // Override `inline code block` background color
-      "code[class*='language-text']": {
-        backgroundColor: `#e9eff9 !important`,
-        padding: `0 !important`,
-        color: `${colors.text} !important`
       },
       // Fancy underline links in .post.
       ".post a:not(.gatsby-resp-image-link):not(.anchor), .link-underline": {
