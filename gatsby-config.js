@@ -4,11 +4,19 @@ module.exports = {
     author: `@ghleokim`,
     description: `blog and portfolio of ghleokim`,
     homepage: `https://ghleokim.github.io`,
+    siteUrl: `https://ghleokim.github.io`,
   },
   mapping: {
     "MarkdownRemark.frontmatter.author": `AuthorYaml`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-156914147-1",
+        head: true,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -95,12 +103,8 @@ module.exports = {
       },
     },
     `gatsby-plugin-glamor`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-156914147-1",
-      },
-    },
+    `gatsby-plugin-robots-txt`,
+    `gatsby-plugin-sitemap`,
     // this (optional) plugin enables Progressive Web AppOffline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
