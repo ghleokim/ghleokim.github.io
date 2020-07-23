@@ -51,6 +51,7 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 740,
+              linkImagesToOriginal: false,
             },
           },
           {
@@ -92,7 +93,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/ghleokim-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/ghleokim-icon-2.png`, // This path is relative to the root of the site.
       },
     },
     {
